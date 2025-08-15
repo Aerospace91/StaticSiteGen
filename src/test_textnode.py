@@ -22,6 +22,11 @@ class TestTextNode(unittest.TestCase):
         node = TextNode("This is a text node", TextType.BOLD, "https://boot.dev")
         node2 = TextNode("This is a text node", TextType.BOLD)
         self.assertNotEqual(node, node2)
+        
+    def test_eq_url(self):
+        node = TextNode("This is a string", TextType.TEXT, "google.com")
+        node2 = TextNode("This is a string", TextType.TEXT, "google.com")
+        self.assertEqual(node, node2)
 
 
 if __name__ == "__main__":
